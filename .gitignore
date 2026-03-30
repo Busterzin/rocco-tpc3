@@ -7,7 +7,7 @@ void main(){
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
 
-  testWidgets('shows personal greeting', (WidgetTester tester) async{
+  testWidgets('shows the text', (WidgetTester tester) async{
     app.main();
     await tester.pumpAndSettle(const Duration(seconds: 3));
 
