@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_test/integration_test.dart';
+import 'package:my_app/main.dart' as app;
+
+void main(){
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
+
+  testWidgets('shows personal greeting', (WidgetTester tester) async{
+    app.main();
+    await tester.pumpAndSettle(const Duration(seconds: 3));
+
+    expect(find.text ('Hi! My name is Rocco'), findsOneWidget);
+    expect(find.byKey(const Key('greetingText')), findsOneWidget);
+  });
+}
